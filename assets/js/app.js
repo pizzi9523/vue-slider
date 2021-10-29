@@ -54,6 +54,8 @@ const app = new Vue({
         },
 
         timeSlide: function () {
+            console.log(this);
+            console.log(this.counter);
             setInterval(function () {
                 this.counter++
                 console.log(this.counter);
