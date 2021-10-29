@@ -70,3 +70,11 @@ button{
     width: 100px;
     margin: 20px auto;
 }
+
+.green{
+    background-color: green;
+}
+
+.red{
+    background-color: red;
+}

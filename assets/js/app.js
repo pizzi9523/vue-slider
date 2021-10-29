@@ -1,6 +1,9 @@
 const app = new Vue({
     el: "#root",
     data: {
+        button_class: "green",
+        button_text: "START",
+        clicked: false,
         counter: 0,
         slides: [
             {
@@ -50,20 +53,33 @@ const app = new Vue({
             if (this.counter == this.slides.length) {
                 this.counter = 0;
             }
-            console.log(this.counter);
+            //console.log(this.counter);
         },
 
         timeSlide: function () {
-            console.log(this);
-            console.log(this.counter);
-            setInterval(function () {
-                this.counter++
-                console.log(this.counter);
-                console.log(this);
+            if (app.clicked == false) {
+                app.clicked = true;
+                app.button_class = "red"
+                app.button_text = "STOP"
+            } else {
+                app.clicked = false
+                app.button_class = "green"
+                app.button_text = "START"
+            }
+
+            let clock = setInterval(function () {
+                if (app.clicked == true) {
+                    app.counter++
+                    if (app.counter == app.slides.length) {
+                        app.counter = 0;
+                    } else if (app.counter < 0) {
+                        app.counter = app.slides.length - 1;
+                    }
+                } else {
+                    clearInterval(clock)
+                }
             }, 1000)
         },
-
-
 
     }
 })
