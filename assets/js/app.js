@@ -34,6 +34,24 @@ const app = new Vue({
             }
         ]
 
+    },
+    methods: {
+        slideUp: function () {
+            this.counter--;
+            if (this.counter < 0) {
+                this.counter = this.slides.length - 1;
+            }
+            //console.log(this.counter);
+
+        },
+        slideDown: function () {
+            this.counter++;
+            if (this.counter == this.slides.length) {
+                this.counter = 0;
+            }
+            console.log(this.counter);
+        }
+
     }
 })
 
