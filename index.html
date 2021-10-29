@@ -11,7 +11,20 @@
 
 <body>
     <div id="root">
-
+        <div class="container">
+            <div class="preview">
+                <img :src="slides[counter].image" alt="">
+                <h2>{{slides[counter].title}}</h2>
+                <p>{{slides[counter].text}}</p>
+            </div>
+            <button>UP</button>
+            <button>DOWN</button>
+            <div class="thumbs">
+                <div v-for="slide in slides" class="thumb">
+                    <img :src="slide.image" alt="">
+                </div>
+            </div>
+        </div>
 
     </div>
 
