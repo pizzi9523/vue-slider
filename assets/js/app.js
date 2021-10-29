@@ -46,11 +46,22 @@ const app = new Vue({
         },
         slideDown: function () {
             this.counter++;
+
             if (this.counter == this.slides.length) {
                 this.counter = 0;
             }
             console.log(this.counter);
-        }
+        },
+
+        timeSlide: function () {
+            setInterval(function () {
+                this.counter++
+                console.log(this.counter);
+                console.log(this);
+            }, 1000)
+        },
+
+
 
     }
 })
