@@ -38,6 +38,14 @@ const app = new Vue({
         ]
 
     },
+
+    mounted() {
+        setInterval(function () {
+            app.slideDown()
+        }, 3000)
+
+    },
+
     methods: {
         slideUp: function () {
             this.counter--;
